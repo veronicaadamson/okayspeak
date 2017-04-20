@@ -23,7 +23,11 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>REVERSED_CLIENT_ID</string>
+				<string>http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist</string>
+				<string>version="1.0"&gt;
+&lt;string&gt;com.googleusercontent.apps.766326443785-1dees42nbm2421gscqm32pgt7kie7oph
+</string>
 			</array>
 		</dict>
 	</array>

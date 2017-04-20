@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>766326443785-1dees42nbm2421gscqm32pgt7kie7oph.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.766326443785-1dees42nbm2421gscqm32pgt7kie7oph</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC54bCHC9RzurC2TBeiSnuATuHkqyNjTtk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>766326443785</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.streetcode.okayspeak</string>
+	<key>PROJECT_ID</key>
+	<string>okayspeak-ffcdd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>okayspeak-ffcdd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:766326443785:ios:c8ffebe21fe615a8</string>
+	<key>DATABASE_URL</key>
+	<string>https://okayspeak-ffcdd.firebaseio.com</string>
+</dict>
+</plist>
