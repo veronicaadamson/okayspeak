@@ -1,20 +1,17 @@
 //
-//  CustomTableViewCell.swift
+//  HomeTableViewCell.swift
 //  Template
 //
-//  Created by Mateo Garcia on 4/4/17.
+//  Created by StreetCode Academy on 4/24/17.
 //  Copyright © 2017 StreetCode. All rights reserved.
 //
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+class HomeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var areaLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var descLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

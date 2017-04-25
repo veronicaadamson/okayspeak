@@ -35,14 +35,25 @@ class CustomTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
 
         // Configure the cell...
-
+        if indexPath.row == 0 {
+            cell.iconImageView.image = UIImage(named: "text-to-speech-bubble")
+            cell.descLabel.text = "Read & Speak"
+        }
+        else if indexPath.row == 1 {
+            cell.iconImageView.image = UIImage(named: "speech-coin-image")
+            cell.descLabel.text = "Talk for Money"
+        }
+        else if indexPath.row == 2 {
+            cell.iconImageView.image = UIImage(named: "language-chat-image")
+            cell.descLabel.text = "Language Chat"
+        }
         return cell
     }
 
