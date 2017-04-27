@@ -1,15 +1,14 @@
 //
-//  CustomTableViewController.swift
+//  ReadSpeakTableViewController.swift
 //  Template
 //
-//  Created by Mateo Garcia on 4/4/17.
+//  Created by StreetCode Academy on 4/26/17.
 //  Copyright © 2017 StreetCode. All rights reserved.
 //
 
 import UIKit
-import Firebase
 
-class CustomTableViewController: UITableViewController {
+class ReadSpeakTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,60 +29,23 @@ class CustomTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 0
     }
 
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        if indexPath.row == 0 {
-            cell.iconImageView.image = UIImage(named: "text-to-speech-bubble")
-            cell.descLabel.text = "Read & Speak"
-        }
-        else if indexPath.row == 1 {
-            cell.iconImageView.image = UIImage(named: "speech-coin-image")
-            cell.descLabel.text = "Talk for Money"
-        }
-        else if indexPath.row == 2 {
-            cell.iconImageView.image = UIImage(named: "language-chat-image")
-            cell.descLabel.text = "Language Chat"
-        }
+
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //set control functions
-        
-        if indexPath.row == 0 {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "readspeakvc") as! ReadSpeakTableViewController
-            
-            navigationController?.pushViewController(vc,
-                                                     animated: true)
-            
-        }
-        
-        else if indexPath.row == 1 {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "speakmoneyvc") as! SpeakMoneyViewController
-            
-            navigationController?.pushViewController(vc,
-                                                     animated: true)
-        }
-        else if indexPath.row == 2 {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "languagevc") as! LanguageViewController
-            
-            navigationController?.pushViewController(vc,
-                                                     animated: true)
-        }
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -130,15 +92,4 @@ class CustomTableViewController: UITableViewController {
     }
     */
 
-    @IBAction func onSignOutButton(_ sender: UIBarButtonItem) {
-        
-        do {
-            
-            try FIRAuth.auth()?.signOut()
-        }
-        catch let error {
-            
-            print("Unable to sign out: \(error)")
-        }
-    }
 }

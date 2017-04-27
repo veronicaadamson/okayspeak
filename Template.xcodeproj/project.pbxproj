@@ -13,6 +13,9 @@
 		256DD3D91E93AD1800DC5D31 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD3D81E93AD1800DC5D31 /* CustomCollectionViewCell.swift */; };
 		5DC0A4B51EA8574100202572 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DC0A4B41EA8574100202572 /* GoogleService-Info.plist */; };
 		5DE9691E1EAEE46300A27FAD /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE9691D1EAEE46300A27FAD /* HomeTableViewCell.swift */; };
+		5DEAC1D71EB18D3900DB6EC6 /* ReadSpeakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAC1D61EB18D3900DB6EC6 /* ReadSpeakTableViewController.swift */; };
+		5DEAC1D91EB198E100DB6EC6 /* SpeakMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAC1D81EB198E100DB6EC6 /* SpeakMoneyViewController.swift */; };
+		5DEAC1DB1EB19C5400DB6EC6 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAC1DA1EB19C5400DB6EC6 /* LanguageViewController.swift */; };
 		A56203D41E933FEA00122BDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56203D31E933FEA00122BDB /* AppDelegate.swift */; };
 		A56203D91E933FEA00122BDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56203D71E933FEA00122BDB /* Main.storyboard */; };
 		A56203DB1E933FEA00122BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A56203DA1E933FEA00122BDB /* Assets.xcassets */; };
@@ -29,6 +32,9 @@
 		2FADCD9AB830D9394A43AA7C /* Pods-Template.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Template.release.xcconfig"; path = "Pods/Target Support Files/Pods-Template/Pods-Template.release.xcconfig"; sourceTree = "<group>"; };
 		5DC0A4B41EA8574100202572 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5DE9691D1EAEE46300A27FAD /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		5DEAC1D61EB18D3900DB6EC6 /* ReadSpeakTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadSpeakTableViewController.swift; sourceTree = "<group>"; };
+		5DEAC1D81EB198E100DB6EC6 /* SpeakMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakMoneyViewController.swift; sourceTree = "<group>"; };
+		5DEAC1DA1EB19C5400DB6EC6 /* LanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		8647BBA10F28FEDE08C60D32 /* Pods_Template.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Template.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56203D01E933FEA00122BDB /* Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Template.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56203D31E933FEA00122BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +98,7 @@
 			children = (
 				A56203D31E933FEA00122BDB /* AppDelegate.swift */,
 				A56203D71E933FEA00122BDB /* Main.storyboard */,
+				5DEAC1DA1EB19C5400DB6EC6 /* LanguageViewController.swift */,
 				FCA349411EA5D8FA0025A441 /* CustomTabBarController.swift */,
 				256DD3D41E93A89200DC5D31 /* CustomCollectionViewController.swift */,
 				256DD3D81E93AD1800DC5D31 /* CustomCollectionViewCell.swift */,
@@ -102,6 +109,8 @@
 				5DC0A4B41EA8574100202572 /* GoogleService-Info.plist */,
 				A56203DF1E933FEA00122BDB /* Info.plist */,
 				5DE9691D1EAEE46300A27FAD /* HomeTableViewCell.swift */,
+				5DEAC1D61EB18D3900DB6EC6 /* ReadSpeakTableViewController.swift */,
+				5DEAC1D81EB198E100DB6EC6 /* SpeakMoneyViewController.swift */,
 			);
 			path = Template;
 			sourceTree = "<group>";
@@ -230,10 +239,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DEAC1DB1EB19C5400DB6EC6 /* LanguageViewController.swift in Sources */,
 				FCA349421EA5D8FA0025A441 /* CustomTabBarController.swift in Sources */,
 				256DD3D91E93AD1800DC5D31 /* CustomCollectionViewCell.swift in Sources */,
 				256DD3D31E93A84100DC5D31 /* CustomTableViewController.swift in Sources */,
 				A56203D41E933FEA00122BDB /* AppDelegate.swift in Sources */,
+				5DEAC1D71EB18D3900DB6EC6 /* ReadSpeakTableViewController.swift in Sources */,
+				5DEAC1D91EB198E100DB6EC6 /* SpeakMoneyViewController.swift in Sources */,
 				256DD3D51E93A89200DC5D31 /* CustomCollectionViewController.swift in Sources */,
 				5DE9691E1EAEE46300A27FAD /* HomeTableViewCell.swift in Sources */,
 				256DD3D71E93A97C00DC5D31 /* CustomMapViewController.swift in Sources */,
