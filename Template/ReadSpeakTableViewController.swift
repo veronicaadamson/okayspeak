@@ -29,23 +29,53 @@ class ReadSpeakTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 7
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
 
         // Configure the cell...
+        var tableCell: UITableViewCell?
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakTextTVC", for: indexPath) as! ReadSpeakTextTVC
+            cell.readSpeakTextLabel.text = "Hello, how are you?"
+            tableCell = cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: indexPath) as! ReadSpeakButtonTVC
+            cell.readSpeakButton.titleLabel?.text = "Read to me!"
+            tableCell = cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: indexPath) as! ReadSpeakButtonTVC
+            cell.readSpeakButton.titleLabel?.text = "Okay Speak!"
+            tableCell = cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakTextTVC", for: indexPath) as! ReadSpeakTextTVC
+            cell.readSpeakTextLabel.text = "Hello, haw our you?"
+            tableCell = cell
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: indexPath) as! ReadSpeakButtonTVC
+            cell.readSpeakButton.titleLabel?.text = "Please correct me!"
+            tableCell = cell
+        case 5:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: indexPath) as! ReadSpeakButtonTVC
+            cell.readSpeakButton.titleLabel?.text = "New Exercise"
+            tableCell = cell
+        default:
+            tableCell = UITableViewCell()
+            
+        }
 
-        return cell
+        return tableCell!
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
