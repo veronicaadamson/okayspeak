@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
+
 
 class ReadSpeakTableViewController: UITableViewController {
-
+    var exercises = [Exercise]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,9 @@ class ReadSpeakTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let rootNode = FIRDatabase.database().reference()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,28 +50,28 @@ class ReadSpeakTableViewController: UITableViewController {
         var tableCell: UITableViewCell?
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakTextTVC", for: indexPath) as! ReadSpeakTextTVC
-            cell.readSpeakTextLabel.text = "Hello, how are you?"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "readSpeakCell", for: indexPath) as! ReadSpeakTextTVC
+            cell.helloLabel.text = "Hello, how are you?"
             tableCell = cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: indexPath) as! ReadSpeakButtonTVC
-            cell.readSpeakButton.titleLabel?.text = "Read to me!"
+            cell.readSpeakButton.setTitle("Read to me!", for: .normal)
             tableCell = cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: indexPath) as! ReadSpeakButtonTVC
-            cell.readSpeakButton.titleLabel?.text = "Okay Speak!"
+             cell.readSpeakButton.setTitle("Okay Speak!", for: .normal)
             tableCell = cell
         case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakTextTVC", for: indexPath) as! ReadSpeakTextTVC
-            cell.readSpeakTextLabel.text = "Hello, haw our you?"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "readSpeakCell", for: indexPath) as! ReadSpeakTextTVC
+            cell.helloLabel.text = "Hello, haw our you?"
             tableCell = cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: indexPath) as! ReadSpeakButtonTVC
-            cell.readSpeakButton.titleLabel?.text = "Please correct me!"
+            cell.readSpeakButton.setTitle("Please correct me!", for: .normal)
             tableCell = cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: indexPath) as! ReadSpeakButtonTVC
-            cell.readSpeakButton.titleLabel?.text = "New Exercise"
+            cell.readSpeakButton.setTitle("New Exercise", for: .normal)
             tableCell = cell
         default:
             tableCell = UITableViewCell()
@@ -74,6 +79,10 @@ class ReadSpeakTableViewController: UITableViewController {
         }
 
         return tableCell!
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
 

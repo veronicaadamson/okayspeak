@@ -10,7 +10,8 @@ import UIKit
 
 class ReadSpeakTextTVC: UITableViewCell {
 
-    @IBOutlet weak var readSpeakTextLabel: UILabel!
+    @IBOutlet weak var helloLabel: UILabel!
+ 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
