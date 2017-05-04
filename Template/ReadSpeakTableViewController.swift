@@ -83,7 +83,27 @@ class ReadSpeakTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+        
+    
+    
+        if indexPath.row == 4 {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "correctmevc") as! CorrectMeTableViewController
+    
+            navigationController?.pushViewController(vc,
+                                                     animated: true)
+        }
     }
+    
+    
+//    else if indexPath.row == 2 {
+//    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//    let vc = storyboard.instantiateViewController(withIdentifier: "languagevc") as! LanguageViewController
+//    
+//    navigationController?.pushViewController(vc,
+//    animated: true)
+//    }
+    
     
 
     /*
