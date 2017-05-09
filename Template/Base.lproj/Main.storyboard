@@ -175,6 +175,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.27349689459999998" green="1" blue="0.81910203000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="Button Text"/>
+                                            <connections>
+                                                <action selector="onButton:" destination="sKj-fu-aiS" eventType="touchUpInside" id="PfP-7w-rRJ"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>

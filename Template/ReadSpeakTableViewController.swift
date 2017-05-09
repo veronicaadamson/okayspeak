@@ -12,6 +12,7 @@ import Firebase
 
 class ReadSpeakTableViewController: UITableViewController {
     var exercises = [Exercise]()
+    var exerciseIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +23,15 @@ class ReadSpeakTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         let rootNode = FIRDatabase.database().reference()
+        let exercisesNode = rootNode.child("Exercises")
+        exercisesNode.observe(.childAdded) { (snapshot: FIRDataSnapshot) in
+            let exerciseID = snapshot.key
+            let exercise = Exercise(id: exerciseID, dictionary: snapshot.value as AnyObject)
+            self.exercises.append(exercise)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
         
     }
 
@@ -51,7 +61,7 @@ class ReadSpeakTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "readSpeakCell", for: indexPath) as! ReadSpeakTextTVC
-            cell.helloLabel.text = "Hello, how are you?"
+            cell.helloLabel.text = exercises.count > 0 ? exercises[exerciseIndex].text : ""
             tableCell = cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: indexPath) as! ReadSpeakButtonTVC
@@ -151,4 +161,25 @@ class ReadSpeakTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func onButton(_ sender: UIButton) {
+        if sender.currentTitle == "New Exercise" {
+            if exerciseIndex + 1 < exercises.count {
+                exerciseIndex = exerciseIndex + 1
+                tableView.reloadData()
+            }
+        }
+        
+    }
+    
+    @IBAction func onButton(_ sender: UIButton) {
+        if sender.currentTitle == "Please correct me!" {
+            if exerciseIndex + 1 < exercises.count {
+                exerciseIndex = exerciseIndex + 1
+                tableView.reloadData()
+            }
+        }
+        
+    }
+
+    
 }
