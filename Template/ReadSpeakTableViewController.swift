@@ -168,18 +168,15 @@ class ReadSpeakTableViewController: UITableViewController {
                 tableView.reloadData()
             }
         }
-        
+        else if sender.currentTitle == "Please correct me!" {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "correctmevc") as! CorrectMeTableViewController
+                
+            navigationController?.pushViewController(vc,animated: true)
+            
+        }
     }
     
-    @IBAction func onButton(_ sender: UIButton) {
-        if sender.currentTitle == "Please correct me!" {
-            if exerciseIndex + 1 < exercises.count {
-                exerciseIndex = exerciseIndex + 1
-                tableView.reloadData()
-            }
-        }
-        
-    }
 
     
 }

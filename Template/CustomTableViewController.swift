@@ -66,7 +66,6 @@ class CustomTableViewController: UITableViewController {
             
             navigationController?.pushViewController(vc,
                                                      animated: true)
-            
         }
         
         else if indexPath.row == 1 {
