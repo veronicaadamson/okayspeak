@@ -60,7 +60,7 @@ class ReadSpeakTableViewController: UITableViewController {
         var tableCell: UITableViewCell?
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "readSpeakCell", for: indexPath) as! ReadSpeakTextTVC
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakTextTVC", for: indexPath) as! ReadSpeakTextTVC
             cell.helloLabel.text = exercises.count > 0 ? exercises[exerciseIndex].text : ""
             tableCell = cell
         case 1:
@@ -72,7 +72,7 @@ class ReadSpeakTableViewController: UITableViewController {
              cell.readSpeakButton.setTitle("Okay Speak!", for: .normal)
             tableCell = cell
         case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "readSpeakCell", for: indexPath) as! ReadSpeakTextTVC
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakTextTVC", for: indexPath) as! ReadSpeakTextTVC
             cell.helloLabel.text = "Hello, haw our you?"
             tableCell = cell
         case 4:
@@ -90,6 +90,9 @@ class ReadSpeakTableViewController: UITableViewController {
 
         return tableCell!
     }
+    
+    
+    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100

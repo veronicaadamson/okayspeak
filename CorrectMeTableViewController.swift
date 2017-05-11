@@ -2,7 +2,7 @@
 //  CorrectMeTableViewController.swift
 //  
 //
-//  Created by StreetCode Academy on 5/3/17.
+//  Created by Veronica Adamson on 5/3/17.
 //
 //
 
@@ -34,18 +34,67 @@ class CorrectMeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 8
+        return 11
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        
+        
         // Configure the cell...
-
-        return cell
+        var tableCell: UITableViewCell?
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+            cell.helloLabel.text = "Hello, haw our you?"
+            tableCell = cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+            cell.helloLabel.text = "Hello, haw our you?"
+            tableCell = cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+            cell.helloLabel.text = "Hello, haw our you?"
+            tableCell = cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakTextTVC", for: indexPath) as! ReadSpeakTextTVC
+            cell.helloLabel.text = "Hello, haw our you?"
+            tableCell = cell
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+            cell.helloLabel.text = "Hello, haw our you?"
+            tableCell = cell
+        case 5:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: indexPath) as! ReadSpeakButtonTVC
+            cell.readSpeakButton.setTitle("New Exercise", for: .normal)
+            tableCell = cell
+        case 6:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+            cell.helloLabel.text = "Hello, haw our you?"
+            tableCell = cell
+        case 7:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+            cell.helloLabel.text = "Hello, haw our you?"
+            tableCell = cell
+        case 8:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+            cell.helloLabel.text = "Hello, haw our you?"
+            tableCell = cell
+        case 9:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+            cell.helloLabel.text = "Hello, haw our you?"
+            tableCell = cell
+        case 10:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+            cell.helloLabel.text = "Hello, haw our you?"
+            tableCell = cell
+            
+        default:
+            tableCell = UITableViewCell()
+            
+        }
+        
+        return tableCell!
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
