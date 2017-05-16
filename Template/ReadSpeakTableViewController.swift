@@ -53,13 +53,13 @@ class ReadSpeakTableViewController: UITableViewController {
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 
         // Configure the cell...
-        var tableCell: UITableViewCell?
+       var tableCell: UITableViewCell?
         switch indexPath.row {
-        case 0:
+       case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakTextTVC", for: indexPath) as! ReadSpeakTextTVC
             cell.helloLabel.text = exercises.count > 0 ? exercises[exerciseIndex].text : ""
             tableCell = cell
@@ -90,7 +90,7 @@ class ReadSpeakTableViewController: UITableViewController {
 
         return tableCell!
     }
-    
+
     
     
     
@@ -99,13 +99,13 @@ class ReadSpeakTableViewController: UITableViewController {
         
     
     
-        if indexPath.row == 4 {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "correctmevc") as! CorrectMeTableViewController
-    
-            navigationController?.pushViewController(vc,
-                                                     animated: true)
-        }
+//        if indexPath.row == 4 {
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "correctmevc") as! CorrectMeTableViewController
+//    
+//            navigationController?.pushViewController(vc,
+//                                                     animated: true)
+//        }
     }
     
     
@@ -179,7 +179,7 @@ class ReadSpeakTableViewController: UITableViewController {
             
         }
     }
-    
+
 
     
 }

@@ -45,23 +45,18 @@ class CorrectMeTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            cell.helloLabel.text = "Hello, haw our you?"
             tableCell = cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            cell.helloLabel.text = "Hello, haw our you?"
             tableCell = cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            cell.helloLabel.text = "Hello, haw our you?"
             tableCell = cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakTextTVC", for: indexPath) as! ReadSpeakTextTVC
-            cell.helloLabel.text = "Hello, haw our you?"
             tableCell = cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            cell.helloLabel.text = "Hello, haw our you?"
             tableCell = cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: indexPath) as! ReadSpeakButtonTVC
@@ -69,23 +64,23 @@ class CorrectMeTableViewController: UITableViewController {
             tableCell = cell
         case 6:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            cell.helloLabel.text = "Hello, haw our you?"
+//            cell.helloLabel.text = "Hello, haw our you?"
             tableCell = cell
         case 7:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            cell.helloLabel.text = "Hello, haw our you?"
+//            cell.helloLabel.text = "Hello, haw our you?"
             tableCell = cell
         case 8:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            cell.helloLabel.text = "Hello, haw our you?"
+//            cell.helloLabel.text = "Hello, haw our you?"
             tableCell = cell
         case 9:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            cell.helloLabel.text = "Hello, haw our you?"
+//            cell.helloLabel.text = "Hello, haw our you?"
             tableCell = cell
         case 10:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            cell.helloLabel.text = "Hello, haw our you?"
+//            cell.helloLabel.text = "Hello, haw our you?"
             tableCell = cell
             
         default:
