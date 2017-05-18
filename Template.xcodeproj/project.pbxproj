@@ -108,6 +108,7 @@
 		A56203D21E933FEA00122BDB /* Template */ = {
 			isa = PBXGroup;
 			children = (
+				5DD77DF21ECAACA30072BBE5 /* Main.storyboard */,
 				A56203D31E933FEA00122BDB /* AppDelegate.swift */,
 				5DEAC1DA1EB19C5400DB6EC6 /* LanguageViewController.swift */,
 				FCA349411EA5D8FA0025A441 /* CustomTabBarController.swift */,
@@ -128,7 +129,6 @@
 				5DEAC1D61EB18D3900DB6EC6 /* ReadSpeakTableViewController.swift */,
 				5DEAC1D81EB198E100DB6EC6 /* SpeakMoneyViewController.swift */,
 				5DE3CE7D1EB830BB00335BFA /* Exercise.swift */,
-				5DD77DF21ECAACA30072BBE5 /* Main.storyboard */,
 			);
 			path = Template;
 			sourceTree = "<group>";
@@ -168,6 +168,7 @@
 				TargetAttributes = {
 					A56203CF1E933FEA00122BDB = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = WKQ9AWDZ95;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -396,7 +397,7 @@
 			baseConfigurationReference = C8FE0E05436F33BFA008ABF6 /* Pods-Template.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WKQ9AWDZ95;
 				INFOPLIST_FILE = Template/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.streetcode.okayspeak;
@@ -410,7 +411,7 @@
 			baseConfigurationReference = 2FADCD9AB830D9394A43AA7C /* Pods-Template.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WKQ9AWDZ95;
 				INFOPLIST_FILE = Template/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.streetcode.okayspeak;
