@@ -2,7 +2,7 @@
 //  CorrectMeTextTVC.swift
 //  Template
 //
-//  Created by StreetCode Academy on 5/3/17.
+//  Created by Veronica 2017.
 //  Copyright © 2017 StreetCode. All rights reserved.
 //
 
