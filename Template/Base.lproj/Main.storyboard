@@ -206,7 +206,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CorrectMeTextTVC" rowHeight="92" id="vBi-de-oiM" userLabel="CorrectMeTextTVC" customClass="CorrectMeButtonTVC" customModule="Template" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CorrectMeTextTVC" rowHeight="92" id="vBi-de-oiM" userLabel="CorrectMeTextTVC" customClass="CorrectMeTextTVC" customModule="Template" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vBi-de-oiM" id="hlN-MZ-Qk4">
@@ -227,6 +227,10 @@
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="correctMeButton" destination="ELr-cw-Npl" id="fSj-BE-DKD"/>
+                                    <outlet property="correctMeLabel" destination="rHb-fc-BQ3" id="as1-jC-NeD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

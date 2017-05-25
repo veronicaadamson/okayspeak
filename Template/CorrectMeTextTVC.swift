@@ -10,6 +10,8 @@ import UIKit
 
 class CorrectMeTextTVC: UITableViewCell {
 
+    @IBOutlet weak var correctMeLabel: UILabel!
+    @IBOutlet weak var correctMeButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

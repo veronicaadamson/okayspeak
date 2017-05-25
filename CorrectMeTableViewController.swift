@@ -34,7 +34,7 @@ class CorrectMeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 11
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,37 +45,39 @@ class CorrectMeTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+            cell.correctMeLabel.text = "Words you missed"
             tableCell = cell
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            tableCell = cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            tableCell = cell
+//        case 1:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+//            tableCell = cell
+//        case 2:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+//            tableCell = cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+            cell.correctMeLabel.text = "Words you said"
             tableCell = cell
-        case 4:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            tableCell = cell
-        case 5:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            tableCell = cell
-        case 6:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            tableCell = cell
-        case 7:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            tableCell = cell
-        case 8:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            tableCell = cell
-        case 9:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            tableCell = cell
-        case 10:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            tableCell = cell
+//        case 4:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+//            tableCell = cell
+//        case 5:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+//            tableCell = cell
+//        case 6:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+//            tableCell = cell
+//        case 7:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+//            tableCell = cell
+//        case 8:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+//            tableCell = cell
+//        case 9:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+//            tableCell = cell
+//        case 10:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+//            tableCell = cell
         default:
             tableCell = UITableViewCell()
             

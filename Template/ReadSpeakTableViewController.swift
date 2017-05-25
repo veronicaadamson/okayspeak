@@ -22,9 +22,9 @@ class ReadSpeakTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let rootNode = FIRDatabase.database().reference()
+        let rootNode = Database.database().reference()
         let exercisesNode = rootNode.child("Exercises")
-        exercisesNode.observe(.childAdded) { (snapshot: FIRDataSnapshot) in
+        exercisesNode.observe(.childAdded) { (snapshot: DataSnapshot) in
             let exerciseID = snapshot.key
             let exercise = Exercise(id: exerciseID, dictionary: snapshot.value as AnyObject)
             self.exercises.append(exercise)

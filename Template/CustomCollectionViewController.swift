@@ -93,7 +93,7 @@ class CustomCollectionViewController: UICollectionViewController {
         
         do {
             
-            try FIRAuth.auth()?.signOut()
+            try Auth.auth().signOut()
         }
         catch let error {
             

@@ -13,12 +13,12 @@ import FirebaseGoogleAuthUI
 
 class CustomTabBarController: UITabBarController {
 
-    fileprivate var authHandle: FIRAuthStateDidChangeListenerHandle!
-    var user: FIRUser?
+    fileprivate var authHandle: AuthStateDidChangeListenerHandle!
+    var user: User?
     
     deinit {
         
-        FIRAuth.auth()?.removeStateDidChangeListener(authHandle)
+        Auth.auth().removeStateDidChangeListener(authHandle)
     }
     
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class CustomTabBarController: UITabBarController {
         FUIAuth.defaultAuthUI()?.providers = provider
         
         // Listen for changes in the authorization state.
-        authHandle = FIRAuth.auth()?.addStateDidChangeListener { (auth: FIRAuth, user: FIRUser?) in
+        authHandle = Auth.auth().addStateDidChangeListener { (auth: Auth, user: User?) in
             
             // Check if there is a current user.
             if let activeUser = user {

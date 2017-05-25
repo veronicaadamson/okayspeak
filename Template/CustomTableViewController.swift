@@ -133,7 +133,7 @@ class CustomTableViewController: UITableViewController {
         
         do {
             
-            try FIRAuth.auth()?.signOut()
+            try Auth.auth().signOut()
         }
         catch let error {
             
