@@ -61,7 +61,7 @@ class ReadSpeakTableViewController: UITableViewController {
         switch indexPath.row {
        case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakTextTVC", for: indexPath) as! ReadSpeakTextTVC
-            cell.helloLabel.text = exercises.count > 0 ? exercises[exerciseIndex].text : ""
+            cell.helloLabel.text = exercises.count > 0 ? exercises[exerciseIndex].text : "Fine weather, today."
             tableCell = cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: indexPath) as! ReadSpeakButtonTVC

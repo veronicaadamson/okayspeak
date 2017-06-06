@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class CorrectMeTableViewController: UITableViewController {
-
+    var exercises = [Exercise]()
+    var exerciseIndex = 2
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,18 @@ class CorrectMeTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let rootNode = Database.database().reference()
+        let exercisesNode = rootNode.child("Exercises")
+        exercisesNode.observe(.childAdded) { (snapshot: DataSnapshot) in
+            let exerciseID = snapshot.key
+            let exercise = Exercise(id: exerciseID, dictionary: snapshot.value as AnyObject)
+            self.exercises.append(exercise)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,18 +59,22 @@ class CorrectMeTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            cell.correctMeLabel.text = "Words you missed"
+            cell.correctMeLabel.text = "Words you missed:"
+            cell.correctMeButton.setTitle("", for:
+            .normal)
             tableCell = cell
 //        case 1:
 //            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+//            cell.correctMeLabel.text = exercises.count > 0 ? exercises[exerciseIndex].text : ""
+//            cell.correctMeButton.setTitle("Read to me!", for: .normal)
 //            tableCell = cell
 //        case 2:
 //            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
 //            tableCell = cell
-        case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
-            cell.correctMeLabel.text = "Words you said"
-            tableCell = cell
+//        case 3:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
+//            cell.correctMeLabel.text = "Words you said:"
+//            tableCell = cell
 //        case 4:
 //            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectMeTextTVC", for: indexPath) as! CorrectMeTextTVC
 //            tableCell = cell
