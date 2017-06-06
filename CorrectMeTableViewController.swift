@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Speech
 
 class CorrectMeTableViewController: UITableViewController {
     var exercises = [Exercise]()
@@ -15,6 +16,9 @@ class CorrectMeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -104,6 +108,8 @@ class CorrectMeTableViewController: UITableViewController {
         return tableCell!
     }
 
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -8,14 +8,64 @@
 
 import UIKit
 import Firebase
+import Speech
 
-
-class ReadSpeakTableViewController: UITableViewController {
+class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDelegate {
     var exercises = [Exercise]()
     var exerciseIndex = 0
+    var microphoneButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Insert Voice-to-Text Code
+        let speakIndexPath = IndexPath(row: 2, section: 0)
+        let speakButtonCell = self.tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: speakIndexPath) as! ReadSpeakButtonTVC
+        let speakButton = speakButtonCell.readSpeakButton
+        self.microphoneButton = speakButton
+        
+        let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
+        
+        
+        speakButton?.isEnabled = false  //2
+        
+        speechRecognizer?.delegate = self  //3
+        print("Setup")
+
+        
+        SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
+            
+            var isButtonEnabled = false
+            
+            switch authStatus {  //5
+            case .authorized:
+                isButtonEnabled = true
+                
+            case .denied:
+                isButtonEnabled = false
+                print("User denied access to speech recognition")
+                
+            case .restricted:
+                isButtonEnabled = false
+                print("Speech recognition restricted on this device")
+                
+            case .notDetermined:
+                isButtonEnabled = false
+                print("Speech recognition not yet authorized")
+            }
+            
+            OperationQueue.main.addOperation() {
+                self.microphoneButton.isEnabled = isButtonEnabled
+            }
+        }
+        
+        
+        
+        // Finish Insert Voice-to-Text Code
+    
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
