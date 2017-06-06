@@ -14,6 +14,10 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
     var exercises = [Exercise]()
     var exerciseIndex = 0
     var microphoneButton: UIButton!
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionTask: SFSpeechRecognitionTask?
+    private let audioEngine = AVAudioEngine()
+    let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +27,6 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
         let speakButtonCell = self.tableView.dequeueReusableCell(withIdentifier: "ReadSpeakButtonTVC", for: speakIndexPath) as! ReadSpeakButtonTVC
         let speakButton = speakButtonCell.readSpeakButton
         self.microphoneButton = speakButton
-        
-        let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
-        
         
         speakButton?.isEnabled = false  //2
         
@@ -226,10 +227,82 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
             let vc = storyboard.instantiateViewController(withIdentifier: "correctmevc") as! CorrectMeTableViewController
                 
             navigationController?.pushViewController(vc,animated: true)
-            
         }
-    }
+        else if sender.currentTitle == "Okay Speak!" {
+            self.startRecording()
+        
+        }
 
+    }
+    
+    func startRecording() {
+        
+        if recognitionTask != nil {
+            recognitionTask?.cancel()
+            recognitionTask = nil
+        }
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(AVAudioSessionCategoryRecord)
+            try audioSession.setMode(AVAudioSessionModeMeasurement)
+            try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
+        } catch {
+            print("audioSession properties weren't set because of an error.")
+        }
+        
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        
+        guard let inputNode = audioEngine.inputNode else {
+            fatalError("Audio engine has no input node")
+        }
+        
+        guard let recognitionRequest = recognitionRequest else {
+            fatalError("Unable to create an SFSpeechAudioBufferRecognitionRequest object")
+        }
+        
+        let speakIndexPath = IndexPath(row: 3, section: 0)
+        let speakLabelCell = self.tableView.dequeueReusableCell(withIdentifier: "ReadSpeakTextTVC", for: speakIndexPath) as! ReadSpeakTextTVC
+        
+        recognitionRequest.shouldReportPartialResults = true
+        
+        recognitionTask = self.speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
+            
+            var isFinal = false
+            
+            if result != nil {
+                
+                speakLabelCell.helloLabel?.text = result?.bestTranscription.formattedString
+                isFinal = (result?.isFinal)!
+            }
+            
+            if error != nil || isFinal {
+                self.audioEngine.stop()
+                inputNode.removeTap(onBus: 0)
+                
+                self.recognitionRequest = nil
+                self.recognitionTask = nil
+                
+                self.microphoneButton.isEnabled = true
+            }
+        })
+        
+        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
+            self.recognitionRequest?.append(buffer)
+        }
+        
+        audioEngine.prepare()
+        
+        do {
+            try audioEngine.start()
+        } catch {
+            print("audioEngine couldn't start because of an error.")
+        }
+        
+        //textView.text = "Say something, I'm listening!"
+        
+    }
 
     
 }
