@@ -215,7 +215,8 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
     }
     */
 
-    @IBOutlet weak var textView: UITextView!
+    //@IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: UILabel!
     
     @IBAction func onButton(_ sender: UIButton) {
         if sender.currentTitle == "New Exercise" {
