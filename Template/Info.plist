@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Language App</string>
+	<string>Your microphone will be used to record your speech when you press the &amp;quot;Okay Speak&amp;quot; button.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Language App</string>
+	<string>Speech recognition will be used to determine which words you speak into this device&amp;apos;s microphone.</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>CFBundleDevelopmentRegion</key>

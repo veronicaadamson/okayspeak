@@ -229,13 +229,13 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
             navigationController?.pushViewController(vc,animated: true)
         }
         else if sender.currentTitle == "Okay Speak!" {
-           // self.startRecording()
-           // @Ifunc microphoneTapped(_ sender: AnyObject) {
+            startRecording()
+           // @IBAction func microphoneTapped(_ sender: AnyObject) {
                 if audioEngine.isRunning {
                     audioEngine.stop()
                     recognitionRequest?.endAudio()
                     microphoneButton.isEnabled = false
-                    microphoneButton.setTitle("Start Recording", for: .normal)
+                    microphoneButton.setTitle("Okay Speak!", for: .normal)
                 } else {
                     startRecording()
                     microphoneButton.setTitle("Stop Recording", for: .normal)

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuthUI
+import Speech
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
