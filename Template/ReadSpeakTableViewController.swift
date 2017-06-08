@@ -215,6 +215,8 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
     }
     */
 
+    @IBOutlet weak var textView: UITextView!
+    
     @IBAction func onButton(_ sender: UIButton) {
         if sender.currentTitle == "New Exercise" {
             if exerciseIndex + 1 < exercises.count {
@@ -230,23 +232,23 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
         }
         else if sender.currentTitle == "Okay Speak!" {
             startRecording()
-           // @IBAction func microphoneTapped(_ sender: AnyObject) {
-                if audioEngine.isRunning {
-                    audioEngine.stop()
-                    recognitionRequest?.endAudio()
-                    microphoneButton.isEnabled = false
-                    microphoneButton.setTitle("Okay Speak!", for: .normal)
-                } else {
-                    startRecording()
-                    microphoneButton.setTitle("Stop Recording", for: .normal)
-                }
-        
+            microphoneTapped(sender)
         }
 
     }
     
     
-    
+    func microphoneTapped(_ sender: AnyObject) {
+        if audioEngine.isRunning {
+            audioEngine.stop()
+            recognitionRequest?.endAudio()
+            microphoneButton.isEnabled = false
+            microphoneButton.setTitle("Okay Speak!", for: .normal)
+        } else {
+            startRecording()
+            microphoneButton.setTitle("Stop Recording", for: .normal)
+        }
+    }
     
     func startRecording() {
         
