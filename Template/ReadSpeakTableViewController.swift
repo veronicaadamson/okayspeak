@@ -34,31 +34,47 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
         print("Setup")
 
         
-        SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
-            
-            var isButtonEnabled = false
-            
-            switch authStatus {  //5
-            case .authorized:
-                isButtonEnabled = true
-                
-            case .denied:
-                isButtonEnabled = false
-                print("User denied access to speech recognition")
-                
-            case .restricted:
-                isButtonEnabled = false
-                print("Speech recognition restricted on this device")
-                
-            case .notDetermined:
-                isButtonEnabled = false
-                print("Speech recognition not yet authorized")
-            }
-            
-            OperationQueue.main.addOperation() {
-                self.microphoneButton.isEnabled = isButtonEnabled
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            if authStatus == SFSpeechRecognizerAuthorizationStatus.authorized {
+                if let path = Bundle.main.url(forResource: "test", withExtension: "m4a") {
+                    let recognizer = SFSpeechRecognizer()
+                    let request = SFSpeechURLRecognitionRequest(url: path)
+                    recognizer?.recognitionTask(with: request, resultHandler: { (result, error) in
+                        if let error = error {
+                            print("There was an error: \(error)")
+                        } else {
+                            print (result?.bestTranscription.formattedString ?? "error baby!")
+                        }
+                    })
+                }
             }
         }
+        
+//        SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
+//            
+//            var isButtonEnabled = false
+//            
+//            switch authStatus {  //5
+//            case .authorized:
+//                isButtonEnabled = true
+//                
+//            case .denied:
+//                isButtonEnabled = false
+//                print("User denied access to speech recognition")
+//                
+//            case .restricted:
+//                isButtonEnabled = false
+//                print("Speech recognition restricted on this device")
+//                
+//            case .notDetermined:
+//                isButtonEnabled = false
+//                print("Speech recognition not yet authorized")
+//            }
+//            
+//            OperationQueue.main.addOperation() {
+//                self.microphoneButton.isEnabled = isButtonEnabled
+//            }
+//        }
         
         
         
@@ -216,9 +232,9 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
     */
 
     //@IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var textView: UILabel!
+    //let textView = UILabel!
     
-    @IBAction func onButton(_ sender: UIButton) {
+    @IBAction func onButton(_ sender: UIButton ) {
         if sender.currentTitle == "New Exercise" {
             if exerciseIndex + 1 < exercises.count {
                 exerciseIndex = exerciseIndex + 1
@@ -232,8 +248,10 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
             navigationController?.pushViewController(vc,animated: true)
         }
         else if sender.currentTitle == "Okay Speak!" {
-            startRecording()
             microphoneTapped(sender)
+            startRecording()
+            
+            print("mic tapped")
         }
 
     }
@@ -280,7 +298,7 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
         let speakIndexPath = IndexPath(row: 3, section: 0)
         let speakLabelCell = self.tableView.dequeueReusableCell(withIdentifier: "ReadSpeakTextTVC", for: speakIndexPath) as! ReadSpeakTextTVC
         
-        recognitionRequest.shouldReportPartialResults = true
+        recognitionRequest.shouldReportPartialResults = false//true
         
         recognitionTask = self.speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
             
@@ -293,6 +311,9 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
             }
             
             if error != nil || isFinal {
+                if let error = error {
+                    print("speech recognizer error \(error.localizedDescription)")
+                }
                 self.audioEngine.stop()
                 inputNode.removeTap(onBus: 0)
                 
@@ -304,6 +325,7 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
         })
         
         let recordingFormat = inputNode.outputFormat(forBus: 0)
+        inputNode.removeTap(onBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
             self.recognitionRequest?.append(buffer)
         }
