@@ -14,6 +14,7 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
     var exercises = [Exercise]()
     var exerciseIndex = 0
     var microphoneButton: UIButton!
+//    let microphoneButton =  ReadSpeakButtonTVC.text("Okay Speak!", for: .normal)
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
@@ -258,14 +259,19 @@ class ReadSpeakTableViewController: UITableViewController, SFSpeechRecognizerDel
     
     
     func microphoneTapped(_ sender: AnyObject) {
+       
+       // var microphoneButton = sender
         if audioEngine.isRunning {
             audioEngine.stop()
+            audioEngine.inputNode?.removeTap(onBus: 0)
             recognitionRequest?.endAudio()
             microphoneButton.isEnabled = false
-            microphoneButton.setTitle("Okay Speak!", for: .normal)
+            sender.setTitle("Okay Speak!", for: .normal)
         } else {
             startRecording()
-            microphoneButton.setTitle("Stop Recording", for: .normal)
+            sender.setTitle("Stop Recording", for: .normal)
+           // microphoneButton.setTitle("Stop Recording", for: .normal)
+            print (microphoneButton)
         }
     }
     

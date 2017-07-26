@@ -946,7 +946,7 @@ static Class gSignInClass = Nil;
 // NSUserDefaults.  Additionally, to mitigate a keychain bug in the iOS 10 simulator
 // that causes SecItemAdd to fail with -34018, we enable NSUserDefaults storage for iOS 10.0.x and
 // 10.1.x.
-#if TARGET_IPHONE_SIMULATOR && (__IPHONE_OS_VERSION_MAX_ALLOWED < 30000 || \
+#if TARGET_IPHONE_SIMULATOR && (__IPHONE_OS_VERSION_MAX_ALLOWED < 8000 || \
     (__IPHONE_OS_VERSION_MAX_ALLOWED >= 100000 && __IPHONE_OS_VERSION_MAX_ALLOWED <= 100100))
 #pragma mark Simulator
 

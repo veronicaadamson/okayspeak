@@ -140,4 +140,5 @@ class CustomTableViewController: UITableViewController {
             print("Unable to sign out: \(error)")
         }
     }
+
 }
